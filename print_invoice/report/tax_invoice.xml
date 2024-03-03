@@ -1,0 +1,228 @@
+<odoo>
+    <data>
+
+        <!--            <div t-attf-class="header" style="width: 100%; display: flex; ">-->
+        <!--                <div style="text-align: left;">-->
+        <!--                    <strong>INVOICE</strong>-->
+        <!--                    <br/>-->
+        <!--                    <span>سند قبض</span>-->
+        <!--                </div>-->
+        <!--                <div style="text-align: right;">-->
+        <!--                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;"-->
+        <!--                         alt="Logo"/>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        -->
+        <!--            <div t-attf-class="footer">-->
+        <!--                <div class="row" style="border-top:1px solid black;font-size:11px">-->
+        <!--                    <div t-if="company.phone" class="list-inline-item">-->
+        <!--                        <i class="fa fa-phone"></i>-->
+        <!--                        Tel:-->
+        <!--                        <span t-field="company.phone"/>-->
+        <!--                    </div>-->
+        <!--                    <div t-if="company.email" class="list-inline-item">-->
+        <!--                        <i class="fa fa-envelope"></i>-->
+        <!--                        Mail:-->
+        <!--                        <span t-field="company.email"/>-->
+        <!--                    </div>-->
+        <!--                    <div t-if="company.website" class="list-inline-item">-->
+        <!--                        <i class="fa fa-globe"></i>-->
+        <!--                        Web:-->
+        <!--                        <span t-field="company.website"/>-->
+        <!--                    </div>-->
+
+        <!--                    <div t-field="company.report_footer"/>-->
+        <!--                    <div t-if="report_type == 'pdf'">-->
+        <!--                        Page:-->
+        <!--                        <span class="page"/>-->
+        <!--                        /-->
+        <!--                        <span class="topage"/>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <template id="report_tax_invoice_company">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.partner_id.lang"/>
+                    <t t-call="print_invoice.receipt_print_new_invoice" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="receipt_print_new_invoice">
+            <t t-call="web.basic_layout">
+                <t t-set="company" t-value="env.company"/>
+
+                <div class="header_info">
+                    <div class="row" style="width: 100%">
+                        <div class="col-6 text-left">
+                            <strong style="font-size: 30px;">invoice</strong>
+                            <br/>
+                            <span style="min-width: 90px;">سـنـد قـبـض</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                 style="height: 120px; width: 170px;" alt="Logo"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+
+                <div class="page_out">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-4">
+                            <span>bill To:
+                                <t t-esc="o.partner_id.name"/>
+                            </span>
+                            <br/>
+                            <t t-esc="o.partner_id.street"/>
+                            <br/>
+                            <t t-esc="o.partner_id.city"/>,
+                        </div>
+                        <div class="col-4">
+                            <span>ship To:</span>
+                        </div>
+                        <div class="col-4">
+                            <table class="table_date">
+                                <tr class="rounded-div">
+                                    <td>Invoice No:</td>
+                                    <td>
+                                        <t t-esc="o.name"/>
+                                    </td>
+                                </tr>
+                                <tr class="rounded-div">
+                                    <td>Invoice Date:</td>
+                                    <td>
+                                        <t t-esc="o.invoice_date"/>
+                                    </td>
+                                </tr>
+                                <tr class="rounded-div">
+                                    <td>Due Date:</td>
+                                    <td>
+                                        <t t-esc="o.invoice_date_due"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <table class="table_curve_border">
+                        <thead>
+                            <tr>
+                                <th>Iitem</th>
+                                <th>Qty</th>
+                                <th>description</th>
+                                <th>subtotal</th>
+                                <th>tax value</th>
+                                <th>tax %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.quantity"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.price_subtotal"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.tax_ids.amount"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.tax_ids.name"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <div class="row">
+                        <div class="col-4" style="text-align: center; ">
+                            <img t-if="o.l10n_sa_qr_code_str" style="display:block;"
+                                 t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 150, 150)"/>
+                        </div>
+                        <div class="col-2"/>
+                        <div class="col-6">
+                            <table class="table_total">
+                                <tr class="rounded-div">
+                                    <td>Item Total:</td>
+                                    <td>
+                                        <span t-field="o.total_qty"/>
+                                    </td>
+                                </tr>
+                                <tr class="rounded-div">
+                                    <td>Total:</td>
+                                    <td>
+                                        <span t-field="o.amount_total"/>
+                                    </td>
+                                </tr>
+                                <tr class="rounded-div">
+                                    <td>Paid:</td>
+                                    <td>
+                                        <span t-field="o.amount_paid"/>
+                                    </td>
+                                </tr>
+                                <tr class="rounded-div">
+                                    <td>Balance Due:</td>
+                                    <td>
+                                        <span t-field="o.amount_residual"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div>
+                        <div t-if="company.bank_name">
+                            Name of Bank:
+                            <span t-field="company.bank_name"/>
+                        </div>
+                        <div t-if="company.account_number">
+                            Account Number:
+                            <span t-field="company.account_number"/>
+                        </div>
+                        <div t-if="company.iban">
+                            IBAN Number:
+                            <span t-field="company.iban"/>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Footer Information -->
+                <div class="footer_info">
+                    <div class="contact-info"
+                         style="display: flex; justify-content: space-between; width: 100%; margin-top: 20px;">
+                        <div t-if="company.phone" class="list-inline-item" style="text-align: left;">
+                            <i class="fa fa-phone"></i>
+                            Tel:
+                            <span t-field="company.phone"/>
+                        </div>
+                        <div t-if="company.email" class="list-inline-item" style="text-align: center;">
+                            <i class="fa fa-envelope"></i>
+                            Mail:
+                            <span t-field="company.email"/>
+                        </div>
+                        <div t-if="company.website" class="list-inline-item" style="text-align: right;">
+                            <i class="fa fa-globe"></i>
+                            Web:
+                            <span t-field="company.website"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

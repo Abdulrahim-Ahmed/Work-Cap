@@ -1,0 +1,98 @@
+/* Overall table styles */
+.header_info {
+    font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    width: 100%;
+    direction: ltr;
+}
+
+.page_out{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    direction: ltr;
+}
+
+.table_curve_border {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    border: solid 1px #000; /* adjust color to match your needs */
+    border-radius: 16px;
+    overflow: hidden; /* ensures the rounded corners contain the content */
+}
+
+.table_curve_border thead th {
+    background-color: #DCDCDC; /* light grey background, adjust the color to match the image */
+    padding: 15px;
+    border-bottom: solid 1px #DCDCDC; /* adjust color to match your needs */
+}
+
+.table_curve_border tbody td {
+    padding: 15px;
+    border-bottom: solid 1px #ddd; /* lighter line color for the tbody rows */
+}
+
+
+
+.table_date, .table_total {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+/* Apply styles directly to table cells in rows marked with 'rounded-div' */
+.rounded-div td:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #DCDCDC; /* Adjust this color as needed */
+}
+
+.rounded-div td:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #DCDCDC; /* Adjust this color as needed */
+}
+
+/* Remove specific background color for odd rows */
+.table_date tr:nth-child(odd) td, .table_total tr:nth-child(odd) td {
+    background-color: transparent; /* This will ensure alternating row colors */
+}
+
+.table_date td, .table_total td {
+    padding: 10px;
+    vertical-align: middle;
+    border: none; /* Removes the border from the table cells */
+}
+
+/* Ensure all cells have a background color, not just those in '.rounded-div' rows */
+.table_date tr, .table_total tr {
+    background-color: #FFFFFF; /* Default background for even rows */
+}
+
+
+.footer .list-inline {
+    padding-left: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.footer .list-inline-item {
+    display: inline; /* Adjust to inline-block for more control if necessary */
+    margin: 5px 10px; /* Adjust spacing around items */
+}
+
+.footer .fa {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Ensure icons are displayed in print */
+@media print {
+    .fa {
+        font-family: FontAwesome; /* This ensures FontAwesome icons are used */
+    }
+}
