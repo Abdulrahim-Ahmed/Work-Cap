@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <!-- This Menu Item must have a parent and an action -->
+      <menuitem id="menu_follow_view_list_customer_statements" name="Follow-up Reports" parent="sale.sale_order_menu" action="account_followup.action_view_list_customer_statements" sequence="101"/>
+    </data>
+</odoo>
