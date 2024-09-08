@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="paperformat_custom_a4_print" model="report.paperformat">
+<!--    <record id="paperformat_custom_a4_print" model="report.paperformat">-->
 <!--        <field name="name">Custom A4</field>-->
 <!--        <field name="default" eval="True"/>-->
 <!--        <field name="format">A4</field>-->
