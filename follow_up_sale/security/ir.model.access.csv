@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_followup_followup_line,account_followup.followup.line,account_followup.model_account_followup_followup_line,sales_team.group_sale_salesman,1,1,1,0
