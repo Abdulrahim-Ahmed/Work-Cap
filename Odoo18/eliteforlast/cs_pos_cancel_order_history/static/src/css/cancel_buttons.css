@@ -1,0 +1,85 @@
+/* Cancel Order Controls */
+.cancel-order-controls {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.cancel-order-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cancel-order-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.cancel-order-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Cancel Line Button */
+.cancel-line-btn-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.cancel-line-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.cancel-line-btn:hover {
+    background: #c82333;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.cancel-line-btn:active {
+    transform: scale(0.95);
+}
+
+/* Make sure orderline has relative positioning for absolute button */
+.orderline {
+    position: relative;
+    padding-right: 40px; /* Make space for cancel button */
+}
+
+/* Hide cancel button on small screens to avoid overlap */
+@media (max-width: 768px) {
+    .cancel-line-btn-container {
+        display: none;
+    }
+    
+    .orderline {
+        padding-right: 10px;
+    }
+}

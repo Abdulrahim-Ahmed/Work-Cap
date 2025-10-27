@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_request.cash.custody,request.cash.custody,model_request_cash_custody,base.group_user,1,1,1,1
+access_request.cash.custody.lines,request.cash.custody.lines,model_request_cash_custody_lines,base.group_user,1,1,1,1
+access_reconcile.cash.custody,reconcile.cash.custody,model_reconcile_cash_custody,base.group_user,1,1,1,1
+access_reconcile.cash.custody.lines,reconcile.cash.custody.lines,model_reconcile_cash_custody_lines,base.group_user,1,1,1,1

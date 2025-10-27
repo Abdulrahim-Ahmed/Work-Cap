@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+inventory_reservation.access_reservation_cancel_wizard,access_reservation_cancel_wizard,inventory_reservation.model_reservation_cancel_wizard,base.group_user,1,1,1,1

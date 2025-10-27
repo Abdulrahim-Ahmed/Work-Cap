@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+purchase_view_custom.access_factory_add,access_factory_add,purchase_view_custom.model_factory_add,base.group_user,1,1,1,1
