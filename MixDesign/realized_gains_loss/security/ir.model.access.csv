@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_realized_gains_loss_realized_gains_loss,realized_gains_loss.realized_gains_loss,model_realized_gains_loss_realized_gains_loss,base.group_user,1,1,1,1

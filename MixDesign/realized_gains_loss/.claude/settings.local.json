@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(psql:*)",
+      "Bash(PGPASSWORD=1 psql:*)"
+    ],
+    "deny": []
+  }
+}

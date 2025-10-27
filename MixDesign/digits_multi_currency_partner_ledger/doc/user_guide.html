@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Currency Partner Ledger - User Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2C3E50;
+            text-align: center;
+            border-bottom: 2px solid #3498DB;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980B9;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #3498DB;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+        .step {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498DB;
+        }
+        .note {
+            background-color: #f0f7fb;
+            border-left: 4px solid #3498DB;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multi Currency Partner Ledger - User Guide</h1>
+    
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#accessing">2. Accessing the Module</a></li>
+            <li><a href="#generating">3. Generating Reports</a></li>
+            <li><a href="#understanding">4. Understanding the Report</a></li>
+            <li><a href="#exporting">5. Exporting Reports</a></li>
+            <li><a href="#tips">6. Tips and Best Practices</a></li>
+            <li><a href="#faq">7. Frequently Asked Questions</a></li>
+        </ul>
+    </div>
+
+    <h2 id="introduction">1. Introduction</h2>
+    <p>Welcome to the Multi Currency Partner Ledger user guide. This document will help you understand how to use the module effectively to generate partner ledger reports in multiple currencies.</p>
+    
+    <div class="note">
+        <p><strong>Note:</strong> The Multi Currency Partner Ledger module is designed for Odoo 18 and requires the Accounting module to be installed.</p>
+    </div>
+
+    <h2 id="accessing">2. Accessing the Module</h2>
+    <p>To access the Multi Currency Partner Ledger module:</p>
+    
+    <div class="step">
+        <p><strong>Step 1:</strong> Log in to your Odoo instance.</p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 2:</strong> Navigate to the Accounting module by clicking on "Accounting" in the main menu.</p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 3:</strong> In the Accounting menu, go to "Reporting" and then click on "Multi Currency Partner Ledger".</p>
+    </div>
+    
+    <h2 id="generating">3. Generating Reports</h2>
+    <p>Follow these steps to generate a Multi Currency Partner Ledger report:</p>
+    
+    <div class="step">
+        <p><strong>Step 1:</strong> Set the date range for your report using the "Start Date" and "End Date" fields.</p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 2:</strong> Select the target moves:
+            <ul>
+                <li><strong>All Posted Entries:</strong> Only includes journal entries that have been posted.</li>
+                <li><strong>All Entries:</strong> Includes all journal entries, including draft entries.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 3:</strong> Select partners for the report:
+            <ul>
+                <li>You can select specific partners or leave this field empty to include all partners.</li>
+                <li>Use the search function to quickly find partners by name or code.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 4:</strong> Select accounts:
+            <ul>
+                <li>You can select specific accounts or leave this field empty to include all accounts.</li>
+                <li>Typically, you'll want to include receivable and payable accounts.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 5:</strong> Select currencies:
+            <ul>
+                <li>Choose the currencies you want to include in the report.</li>
+                <li>You must select at least one currency.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 6:</strong> Configure additional options:
+            <ul>
+                <li><strong>Show Initial Balance:</strong> Toggle this option to show or hide initial balances.</li>
+                <li><strong>Reconciled:</strong> Toggle this option to show only reconciled entries.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="step">
+        <p><strong>Step 7:</strong> Click one of the following buttons:
+            <ul>
+                <li><strong>View:</strong> Display the report in the browser.</li>
+                <li><strong>Print:</strong> Generate a PDF report.</li>
+                <li><strong>Export Excel:</strong> Download an Excel (XLSX) version of the report.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <h2 id="understanding">4. Understanding the Report</h2>
+    <p>The Multi Currency Partner Ledger report is organized as follows:</p>
+    
+    <h3>Report Header</h3>
+    <p>The header section includes:</p>
+    <ul>
+        <li>Company name and information</li>
+        <li>Report title</li>
+        <li>Date range</li>
+        <li>Filter criteria applied</li>
+    </ul>
+    
+    <h3>Partner Information</h3>
+    <p>For each partner, the report displays:</p>
+    <ul>
+        <li>Partner name</li>
+        <li>Partner code</li>
+        <li>Contact information (if available)</li>
+    </ul>
+    
+    <h3>Currency Sections</h3>
+    <p>The report is organized by currency, with each currency having its own section containing:</p>
+    <ul>
+        <li>Currency name and symbol</li>
+        <li>Initial balance (if enabled)</li>
+        <li>Transaction details</li>
+        <li>Subtotals for the currency</li>
+    </ul>
+    
+    <h3>Transaction Details</h3>
+    <p>For each transaction, the report shows:</p>
+    <ul>
+        <li>Date</li>
+        <li>Journal</li>
+        <li>Reference</li>
+        <li>Label/Description</li>
+        <li>Debit amount</li>
+        <li>Credit amount</li>
+        <li>Running balance</li>
+    </ul>
+    
+    <h3>Totals and Subtotals</h3>
+    <p>The report includes:</p>
+    <ul>
+        <li>Subtotals per currency</li>
+        <li>Subtotals per partner</li>
+        <li>Grand total across all partners and currencies</li>
+    </ul>
+    
+    <h2 id="exporting">5. Exporting Reports</h2>
+    <p>The Multi Currency Partner Ledger module allows you to export reports in two formats:</p>
+    
+    <h3>PDF Export</h3>
+    <p>To export the report as a PDF:</p>
+    <div class="step">
+        <p><strong>Step 1:</strong> Configure your report parameters as described in the "Generating Reports" section.</p>
+    </div>
+    <div class="step">
+        <p><strong>Step 2:</strong> Click the "Print" button.</p>
+    </div>
+    <div class="step">
+        <p><strong>Step 3:</strong> A PDF file will be generated and downloaded to your computer.</p>
+    </div>
+    
+    <h3>Excel Export</h3>
+    <p>To export the report as an Excel file:</p>
+    <div class="step">
+        <p><strong>Step 1:</strong> Configure your report parameters as described in the "Generating Reports" section.</p>
+    </div>
+    <div class="step">
+        <p><strong>Step 2:</strong> Click the "Export Excel" button.</p>
+    </div>
+    <div class="step">
+        <p><strong>Step 3:</strong> An XLSX file will be generated and downloaded to your computer.</p>
+    </div>
+    
+    <div class="note">
+        <p><strong>Note:</strong> The Excel export provides additional flexibility for data analysis and manipulation.</p>
+    </div>
+    
+    <h2 id="tips">6. Tips and Best Practices</h2>
+    
+    <h3>Optimizing Report Performance</h3>
+    <ul>
+        <li><strong>Narrow Date Ranges:</strong> Use specific date ranges to improve report generation speed.</li>
+        <li><strong>Select Specific Partners:</strong> When possible, select only the partners you need rather than generating reports for all partners.</li>
+        <li><strong>Limit Currencies:</strong> Include only the currencies you need to analyze.</li>
+    </ul>
+    
+    <h3>Effective Filtering</h3>
+    <ul>
+        <li><strong>Use Partner Tags:</strong> Organize partners with tags to make selection easier.</li>
+        <li><strong>Save Favorite Filters:</strong> Save commonly used filter combinations as favorites for quick access.</li>
+        <li><strong>Combine with Other Reports:</strong> Use the Multi Currency Partner Ledger in conjunction with other accounting reports for comprehensive analysis.</li>
+    </ul>
+    
+    <div class="warning">
+        <p><strong>Warning:</strong> Generating reports with many partners, accounts, and currencies over a wide date range may take longer to process.</p>
+    </div>
+    
+    <h2 id="faq">7. Frequently Asked Questions</h2>
+    
+    <h3>Why are some transactions missing from my report?</h3>
+    <p>Transactions may be missing for several reasons:</p>
+    <ul>
+        <li>They fall outside the selected date range</li>
+        <li>They involve partners or accounts not included in your filter</li>
+        <li>They are in currencies not selected for the report</li>
+        <li>If "All Posted Entries" is selected, draft entries will not appear</li>
+    </ul>
+    
+    <h3>Why do the amounts in different currencies not match when converted?</h3>
+    <p>Currency conversion depends on the exchange rates defined in Odoo. Discrepancies may occur due to:</p>
+    <ul>
+        <li>Exchange rate fluctuations over time</li>
+        <li>Missing exchange rates for specific dates</li>
+        <li>Rounding differences</li>
+    </ul>
+    <p>Ensure your exchange rates are up-to-date for accurate reporting.</p>
+    
+    <h3>Can I customize the report layout?</h3>
+    <p>The standard report layout is fixed, but you can:</p>
+    <ul>
+        <li>Export to Excel for custom formatting</li>
+        <li>Contact your Odoo developer to customize the QWeb templates if needed</li>
+    </ul>
+    
+    <h3>How can I analyze data from multiple periods?</h3>
+    <p>To compare data across multiple periods:</p>
+    <ul>
+        <li>Generate separate reports for each period</li>
+        <li>Export to Excel and use pivot tables for analysis</li>
+        <li>Consider using Odoo's dashboard features for visual comparisons</li>
+    </ul>
+
+    <div class="footer">
+        <p>© 2025 Digital Integrated Transformation Solutions (DigitsCode)<br>
+        This module is licensed under the Odoo Proprietary License (OPL-1).</p>
+    </div>
+</body>
+</html>

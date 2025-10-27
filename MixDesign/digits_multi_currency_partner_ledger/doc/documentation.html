@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Currency Partner Ledger Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2C3E50;
+            text-align: center;
+            border-bottom: 2px solid #3498DB;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980B9;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #3498DB;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multi Currency Partner Ledger Documentation</h1>
+    
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#installation">2. Installation</a></li>
+            <li><a href="#configuration">3. Configuration</a></li>
+            <li><a href="#usage-guide">4. Usage Guide</a></li>
+            <li><a href="#technical-details">5. Technical Details</a></li>
+            <li><a href="#troubleshooting">6. Troubleshooting</a></li>
+            <li><a href="#support">7. Support</a></li>
+        </ul>
+    </div>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>The Multi Currency Partner Ledger module for Odoo 18 allows businesses to generate detailed partner ledger reports in multiple currencies. This comprehensive documentation provides all the information needed to install, configure, and use the module effectively.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Multi-Currency Support</strong>: View partner ledger reports in multiple currencies simultaneously</li>
+        <li><strong>Flexible Filtering</strong>: Filter by partner, date range, account, and target moves</li>
+        <li><strong>Initial Balances</strong>: Option to show initial balances for comprehensive reporting</li>
+        <li><strong>Export Options</strong>: Export reports to PDF and Excel formats</li>
+        <li><strong>Detailed Transaction View</strong>: See all transactions by currency with clear debit, credit, and balance columns</li>
+        <li><strong>User-Friendly Interface</strong>: Intuitive wizard interface for easy report generation</li>
+    </ul>
+
+    <h2 id="installation">Installation</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Odoo 18 Enterprise Edition</li>
+        <li>Python 3.10 or higher</li>
+        <li>Required dependencies: account, web, report_xlsx</li>
+    </ul>
+
+    <h3>Installation Steps</h3>
+    <ol>
+        <li>Download the module from the Odoo Apps store or copy it to your custom addons directory</li>
+        <li>Update the apps list in Odoo:
+            <ul>
+                <li>Go to Apps menu</li>
+                <li>Click on "Update Apps List" in the top menu</li>
+                <li>Click "Update" in the dialog</li>
+            </ul>
+        </li>
+        <li>Install the module:
+            <ul>
+                <li>Search for "Multi Currency Partner Ledger" in the Apps menu</li>
+                <li>Click "Install" button</li>
+            </ul>
+        </li>
+        <li>Restart the Odoo server to ensure all changes take effect</li>
+    </ol>
+
+    <h2 id="configuration">Configuration</h2>
+    <p>The Multi Currency Partner Ledger module requires minimal configuration. However, to ensure optimal functionality, follow these steps:</p>
+
+    <ol>
+        <li><strong>Set Up Currencies</strong>:
+            <ul>
+                <li>Go to Accounting → Configuration → Currencies</li>
+                <li>Ensure all required currencies are activated</li>
+                <li>Verify that exchange rates are up-to-date</li>
+            </ul>
+        </li>
+        <li><strong>Configure User Access Rights</strong>:
+            <ul>
+                <li>Go to Settings → Users & Companies → Users</li>
+                <li>Edit the user(s) who need access to the module</li>
+                <li>Ensure they have access to Accounting features</li>
+                <li>Save changes</li>
+            </ul>
+        </li>
+        <li><strong>Optional: Default Settings</strong>:
+            <ul>
+                <li>Go to Accounting → Configuration → Settings</li>
+                <li>Configure default fiscal year settings</li>
+                <li>Set up default accounts if needed</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2 id="usage-guide">Usage Guide</h2>
+    <h3>Generating a Multi-Currency Partner Ledger Report</h3>
+    <ol>
+        <li>Navigate to Accounting → Reporting → Multi Currency Partner Ledger</li>
+        <li>In the wizard form, set the following parameters:
+            <ul>
+                <li><strong>Date Range</strong>: Select start and end dates for the report</li>
+                <li><strong>Target Moves</strong>: Choose between "All Posted Entries" or "All Entries"</li>
+                <li><strong>Partners</strong>: Select specific partners or leave blank for all</li>
+                <li><strong>Accounts</strong>: Select specific accounts or leave blank for all</li>
+                <li><strong>Currencies</strong>: Select the currencies to include in the report</li>
+                <li><strong>Show Initial Balance</strong>: Toggle to show or hide initial balances</li>
+                <li><strong>Reconciled</strong>: Option to show only reconciled entries</li>
+            </ul>
+        </li>
+        <li>Click one of the following buttons:
+            <ul>
+                <li><strong>View</strong>: Display the report in the browser</li>
+                <li><strong>Print</strong>: Generate a PDF report</li>
+                <li><strong>Export Excel</strong>: Download an Excel (XLSX) version of the report</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Understanding the Report</h3>
+    <p>The Multi Currency Partner Ledger report displays the following information:</p>
+    <ul>
+        <li><strong>Header</strong>: Company information, report date range, and filter criteria</li>
+        <li><strong>Partner Information</strong>: Partner name, code, and contact details</li>
+        <li><strong>Currency Sections</strong>: Separate sections for each selected currency</li>
+        <li><strong>Transaction Details</strong>: Date, journal, reference, label, debit, credit, and balance</li>
+        <li><strong>Subtotals</strong>: Subtotals per currency and partner</li>
+        <li><strong>Grand Total</strong>: Total across all partners and currencies</li>
+    </ul>
+
+    <h2 id="technical-details">Technical Details</h2>
+    <h3>Module Structure</h3>
+    <p>The module is organized as follows:</p>
+    <ul>
+        <li><strong>models/</strong>: Contains the data models
+            <ul>
+                <li><code>account_move_line.py</code>: Extends account move line model</li>
+                <li><code>multi_currency_ledger.py</code>: Main report model</li>
+            </ul>
+        </li>
+        <li><strong>wizard/</strong>: Contains the report wizard
+            <ul>
+                <li><code>multi_currency_ledger_wizard.py</code>: Wizard model and views</li>
+            </ul>
+        </li>
+        <li><strong>report/</strong>: Contains report templates and rendering logic
+            <ul>
+                <li><code>multi_currency_ledger_report.xml</code>: Report action definitions</li>
+                <li><code>multi_currency_ledger_report_templates.xml</code>: QWeb templates for PDF</li>
+                <li><code>multi_currency_ledger_report_xlsx.py</code>: Excel report generator</li>
+            </ul>
+        </li>
+        <li><strong>security/</strong>: Contains access control definitions
+            <ul>
+                <li><code>ir.model.access.csv</code>: Access rights configuration</li>
+            </ul>
+        </li>
+        <li><strong>views/</strong>: Contains UI views
+            <ul>
+                <li><code>menu_views.xml</code>: Menu definitions</li>
+            </ul>
+        </li>
+        <li><strong>static/</strong>: Contains static assets
+            <ul>
+                <li><code>description/</code>: Module description and screenshots</li>
+                <li><code>Screenshot/</code>: Additional screenshots</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Technical Implementation</h3>
+    <p>The module implements the following technical features:</p>
+    <ol>
+        <li><strong>Custom Report Model</strong>: Extends AbstractModel to create a flexible report</li>
+        <li><strong>XLSX Report Generation</strong>: Uses report_xlsx module to create Excel reports</li>
+        <li><strong>Multi-Currency Calculations</strong>: Performs currency conversions and calculations</li>
+        <li><strong>QWeb Templates</strong>: Uses QWeb for PDF report generation</li>
+        <li><strong>Wizard Interface</strong>: Provides a user-friendly interface for report configuration</li>
+    </ol>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <h3>Common Issues and Solutions</h3>
+    <ol>
+        <li><strong>Report Shows No Data</strong>
+            <ul>
+                <li>Verify that partners have transactions in the selected date range</li>
+                <li>Check that the selected currencies are used in transactions</li>
+                <li>Ensure accounts contain transactions for the selected partners</li>
+            </ul>
+        </li>
+        <li><strong>Currency Amounts Are Incorrect</strong>
+            <ul>
+                <li>Verify exchange rates are correctly set up in Odoo</li>
+                <li>Check the transaction dates match the exchange rate dates</li>
+                <li>Ensure the base currency is properly configured</li>
+            </ul>
+        </li>
+        <li><strong>Excel Export Fails</strong>
+            <ul>
+                <li>Verify the report_xlsx module is properly installed</li>
+                <li>Check server logs for specific error messages</li>
+                <li>Ensure the user has proper access rights</li>
+            </ul>
+        </li>
+        <li><strong>Performance Issues with Large Datasets</strong>
+            <ul>
+                <li>Consider narrowing the date range</li>
+                <li>Filter by specific partners rather than all</li>
+                <li>Select only relevant currencies</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Error Messages</h3>
+    <table>
+        <tr>
+            <th>Error Message</th>
+            <th>Possible Cause</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>"No data available"</td>
+            <td>No transactions found for the selected criteria</td>
+            <td>Adjust filter criteria</td>
+        </tr>
+        <tr>
+            <td>"Currency rate missing"</td>
+            <td>Exchange rate not defined for a date</td>
+            <td>Set up the missing exchange rate</td>
+        </tr>
+        <tr>
+            <td>"Access denied"</td>
+            <td>Insufficient user permissions</td>
+            <td>Grant proper access rights</td>
+        </tr>
+    </table>
+
+    <h2 id="support">Support</h2>
+    <p>For any questions, issues, or feature requests, please contact:</p>
+    <ul>
+        <li><strong>Email</strong>: info@digitscode.com</li>
+        <li><strong>Website</strong>: https://www.digitscode.com</li>
+        <li><strong>Phone</strong>: Contact your account manager</li>
+    </ul>
+
+    <h3>Reporting Bugs</h3>
+    <p>When reporting bugs, please include:</p>
+    <ol>
+        <li>Detailed description of the issue</li>
+        <li>Steps to reproduce</li>
+        <li>Screenshots if applicable</li>
+        <li>Odoo version and module version</li>
+        <li>Browser information (if web-related)</li>
+    </ol>
+
+    <div class="footer">
+        <p>© 2025 Digital Integrated Transformation Solutions (DigitsCode)<br>
+        This module is licensed under the Odoo Proprietary License (OPL-1).</p>
+    </div>
+</body>
+</html>

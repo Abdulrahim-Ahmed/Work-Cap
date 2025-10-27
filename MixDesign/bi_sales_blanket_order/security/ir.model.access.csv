@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+bi_sales_blanket_order.access_blanket_order,access_blanket_order,bi_sales_blanket_order.model_blanket_order,base.group_user,1,1,1,1
+bi_sales_blanket_order.access_blanket_order_line,access_blanket_order_line,bi_sales_blanket_order.model_blanket_order_line,base.group_user,1,1,1,1
+bi_sales_blanket_order.access_quotation_wizard,access_quotation_wizard,bi_sales_blanket_order.model_quotation_wizard,base.group_user,1,1,1,1
+bi_sales_blanket_order.access_quotation_wizard_line,access_quotation_wizard_line,bi_sales_blanket_order.model_quotation_wizard_line,base.group_user,1,1,1,1
