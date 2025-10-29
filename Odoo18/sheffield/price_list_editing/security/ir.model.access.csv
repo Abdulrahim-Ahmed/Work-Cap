@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_price_list_editing_price_list_editing,price_list_editing.price_list_editing,model_price_list_editing_price_list_editing,base.group_user,1,1,1,1

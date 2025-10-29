@@ -1,0 +1,1 @@
+{    'name': 'Qweb Report devest',    'version': '18.0.1.0.0',    'author': 'BASEM WALID',    'summary': "Qweb Report devest",    'sequence': 1,    'description': "Qweb Report Demo",    'category': 'web',    'website': 'https://www.devest.co',    'depends': ['base'],    'data': [        'report/inherit_qweb_template.xml',    ]}

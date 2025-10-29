@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_po_number,account.po_number,model_po_number,base.group_user,1,1,1,1
+access_project_links,access_project_links,link_all_project.model_project_links,base.group_user,1,0,0,0
+
